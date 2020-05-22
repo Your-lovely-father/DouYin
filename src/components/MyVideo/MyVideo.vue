@@ -26,7 +26,10 @@
       </div>
     </div>
     <div class="text-wrap">
-      <div class="name">@{{VideoItem.Video.userNickname}}</div>
+      <div class="name">
+        <span>@&nbsp;</span>
+        <span>{{VideoItem.Video.userNickname}}</span>
+      </div>
       <div class="desc">{{VideoItem.Video.videoDesc}}</div>
     </div>
     <div class="input-bar" v-show="!isHome" @click.stop="showCommentList(VideoItem.Video.videoId, VideoItem.WSLCNum.commentNum)">
@@ -151,9 +154,11 @@ export default {
     .name
       color $color-white
       margin-bottom 10px
+      font-size :20px
     .desc
       font-size $font-size-medium
       color $color-text
+      line-height 20px
   .side-bar
     position absolute
     right 10px

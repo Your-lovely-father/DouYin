@@ -27,7 +27,7 @@ npm install
 
 启动redis数据库和mysql数据库
 
-redis数据库配置文件为./server/redis.js
+redis数据库配置文件为./server/redis.js 这个没有启动感觉是这个问题
 mysql数据库配置文件为./server/config.js
 
 node ./server/init-db.js (初始化数据库生成表结构) -- 空表

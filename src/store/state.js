@@ -8,6 +8,6 @@ const state = {
   followedNewsNum: 0,
   allPrivateLetter: [],
   popularVideo: [],
-  playList: []
+  playList: [],
 }
 export default state

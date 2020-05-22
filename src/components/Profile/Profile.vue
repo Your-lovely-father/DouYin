@@ -501,8 +501,9 @@ export default {
         .name
           color $color-white
           font-size $font-size-large-x
-        .subname
           margin-top 5px
+        .subname
+          margin-top 10px
           color $color-white
           font-size $font-size-small
       .desc-wrap
@@ -511,14 +512,16 @@ export default {
           color $color-desc
           font-size $font-size-small
         .gender
+          text-align center
           margin-top 10px
           padding 5px 8px
           border-radius 5px
           background rgba(67, 51, 63, 0.7)
-          font-size $font-size-small-s
+          font-size 13px
           max-width 50px
           color $color-desc
           .icon
+            font-size 13px
             display inline-block
             width 10px
             height 10px

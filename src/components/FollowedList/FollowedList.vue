@@ -2,8 +2,12 @@
 <div class="followed-list">
   <div class="followed-item" v-for="(item, index) in list" :key="item.Video.videoId">
     <div class="top">
-      <img class="avatar" :src="`${baseURL}${item.Video.userAvatar}`" alt="" width="30" height="30"
-        @click="chooseUser(item.Video.userId)"> <span class="name">@{{item.Video.userNickname}}</span>
+      <img class="avatar" :src="`${baseURL}${item.Video.userAvatar}`" alt="" width="35" height="35"
+        @click="chooseUser(item.Video.userId)"> 
+         <p>
+            <span>@&nbsp;</span>
+            <span class="name">{{item.Video.userNickname}}</span>
+         </p>
     </div>
     <div class="desc">{{item.Video.videoDesc}}</div>
     <div class="video-wrap">
@@ -128,18 +132,25 @@ export default {
     &:nth-last-child(2)
       border none
     .top
+      width :100%
+      display :flex
+      height 50px
+      align-items center
+      p
+        height 32px
+        display flex
+        align-items center
+        margin-left 10px
+        font-size 18px
       .name
-        color $color-white
-        margin-left 5px
-        vertical-align top
-        line-height 32px
-        font-size $font-size-medium
+        margin-top 2px
       .avatar
         border-radius 50%
     .desc
       font-size $font-size-medium
       margin 10px 0
       color $color-text
+      line-height 20px
     .video-wrap
       position relative
       width 70%
@@ -159,7 +170,8 @@ export default {
       .like
         position relative
         .likenum
-          font-size $font-size-small-s
+          font-size 14px
+          margin-left 5px
           position absolute
           left 100%
           top 50%
@@ -170,15 +182,17 @@ export default {
       .comment
         position relative
         .commentnum
-          font-size $font-size-small-s
           position absolute
           left 100%
           top 50%
+          font-size 14px
+          margin-left 5px
           transform translateX(20%) translateY(-50%)
       .share
         position relative
         .sharenum
-          font-size $font-size-small-s
+          font-size 14px
+          margin-left 5px
           position absolute
           left 100%
           top 50%
@@ -192,5 +206,5 @@ export default {
     .time
       margin-bottom 20px
       color $color-desc
-      font-size $font-size-small-s
+      font-size 14px
 </style>

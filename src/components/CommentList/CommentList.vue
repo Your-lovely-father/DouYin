@@ -243,6 +243,8 @@ export default {
     color $color-title
     font-size $font-size-small
     font-weight 600
+    color :#ffffff;
+    letter-spacing :3px
     .icon-close
       position absolute
       right 10px
@@ -264,7 +266,6 @@ export default {
     .main
       padding 10px
       flex 1
-      border-bottom 1px solid $color-divide
       .name
         color rgb(166, 165 ,164)
         font-size $font-size-small

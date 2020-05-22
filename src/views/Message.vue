@@ -46,6 +46,7 @@ export default {
   width 100vw
 .tab-wrap
   margin 10px
+  padding-top 20px
   padding-bottom 20px
   border-bottom 1px solid rgb(38, 39, 50)
 .list-wrap

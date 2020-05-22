@@ -567,6 +567,7 @@ module.exports = {
         'userId': userId
       }
     })
+
     if (user) {
       let followedVideoIdList = await db.sequelize.query(`SELECT VideoInfo.videoId FROM UserRegister
       inner join UserRelation
@@ -578,9 +579,8 @@ module.exports = {
       for (let i = 0, len = followedVideoIdList[0].length; i < len; i++) {
         str.push(`'${followedVideoIdList[0][i].videoId}'`)
       }
-      let res = await db.sequelize.query(`SELECT * from WatchInfo where WatchInfo.userId = '${userId}' and WatchInfo.videoId in (${str.join(',')}) 
-      group by WatchInfo.videoId;`)
-      ctx.rest(followedVideoIdList[0].length - res[0].length)
+      let res = await db.sequelize.query(`SELECT * from WatchInfo where WatchInfo.userId = '${userId}' and WatchInfo.videoId in (${str.join(',')}) `)
+      ctx.rest(followedVideoIdList[0].length>res[0].length?followedVideoIdList[0].lengt-res[0].length:0)
     } else {
       throw new APIError('user:not_found', 'user not found by userId.')
     }
@@ -1139,8 +1139,7 @@ module.exports = {
             limit 1) as createdAt
       from PrivateLetter a
       join UserInfo b on a.fromId = '${userId}'
-      and a.toId = b.userId
-      group by toId`)
+      and a.toId = b.userId`)
       let res1 = await db.sequelize.query(`select a.fromId,b.userNickname,b.userAvatar,( select count(*)
       from PrivateLetter c
       where c.isRead = false
@@ -1158,8 +1157,7 @@ module.exports = {
       limit 1) as createdAt
       from PrivateLetter a
       join UserInfo b on a.toId = '${userId}'
-      and a.fromId = b.userId
-      group by fromId`)
+      and a.fromId = b.userId`)
       ctx.rest(res[0].concat(res1[0]))
     } else {
       throw new APIError('user:not_found', 'user not found by userId.')
