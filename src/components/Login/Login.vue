@@ -35,8 +35,8 @@ export default {
     return {
       showRegister: false,
       showRetrievePassword: false,
-      email: '',
-      password: ''
+      email: '95241616@qq.com',
+      password: '123456'
     }
   },
   computed: {

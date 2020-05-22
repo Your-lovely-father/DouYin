@@ -121,7 +121,6 @@ app.use(cors({
   allowMethods: ['GET', 'POST', 'DELETE'],
   allowHeaders: ['Content-Type', 'Authorization', 'Accept']
 }))
-
 app.use(async (ctx, next) => {
   await next()
   const rt = ctx.response.get('X-Response-Time')
@@ -148,7 +147,7 @@ app.use(async (ctx, next) => {
     return
   }
   if (ctx.path.startsWith('/api/admin')) {
-    if (ctx.session.userEmail !== '814930498@qq.com') {
+    if (ctx.session.userEmail !== '95241616@qq.com') {
       ctx.response.status = 400
       ctx.response.type = 'application/json'
       ctx.response.body = {

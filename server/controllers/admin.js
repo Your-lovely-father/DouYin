@@ -24,7 +24,7 @@ module.exports = {
       password: ctx.request.body.password
     }
     let result = false
-    if (user.email === '814930498@qq.com' && user.password === 'asdwsx1234') {
+    if (user.email === '95241616@qq.com' && user.password === '123456') {
       result = true
     }
     if (result) {

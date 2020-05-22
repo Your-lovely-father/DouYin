@@ -118,12 +118,12 @@ let router = new Router({
   ]
 })
 
-router.beforeEach((to, from, next) => {
-  if (!store.state.isLogged && to.path !== '/home') {
-    next({ path: '/home' })
-  } else {
-    next()
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   if (!store.state.isLogged && to.path !== '/home') {
+//     next({ path: '/home' })
+//   } else {
+//     next()
+//   }
+// })
 
 export default router
